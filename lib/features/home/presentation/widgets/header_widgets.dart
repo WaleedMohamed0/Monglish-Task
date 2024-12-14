@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:monglish/core/extensions/empty_padding_extension.dart';
-import 'package:monglish/core/utils/app_assets.dart';
-import 'package:monglish/core/utils/app_colors.dart';
+import 'package:monglish/features/home/presentation/widgets/user_image.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HeaderWidgets extends StatelessWidget {
@@ -21,12 +20,13 @@ class HeaderWidgets extends StatelessWidget {
             size: 30,
           ),
           10.pw,
-          Icon(Icons.search, color: Colors.white,size: 30,),
+          Icon(
+            Icons.search,
+            color: Colors.white,
+            size: 30,
+          ),
           Spacer(),
-          CircleAvatar(
-              backgroundColor: AppColors.primaryColor,
-              radius: 22.sp,
-              child: Image.asset(AppAssets.userImage))
+          UserImage(),
         ],
       ),
     );

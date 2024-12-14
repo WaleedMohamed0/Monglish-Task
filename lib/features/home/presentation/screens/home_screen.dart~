@@ -36,7 +36,6 @@ class HomeScreen extends StatelessWidget {
           RewardsWidget(),
           30.ph,
           FeedbackListWidget(),
-          30.ph
         ],
       ),
     );

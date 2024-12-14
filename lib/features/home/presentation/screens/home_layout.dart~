@@ -36,7 +36,7 @@ class HomeLayout extends StatelessWidget {
                     children: [
                       MenuHeader(),
                       MenuListWidget(),
-                      7.ph,
+                      3.ph,
                       Padding(
                         padding: EdgeInsets.only(right: 5.w),
                         child: Image.asset(AppAssets.frameImage, height: 22.h),

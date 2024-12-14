@@ -24,10 +24,7 @@ class DefaultText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        color: color,
-        fontSize: fontSize,
-        fontWeight: fontWeight,
-      ),
+          color: color, fontSize: fontSize, fontWeight: fontWeight, height: 0),
       maxLines: maxLines,
       overflow: TextOverflow.ellipsis,
       textAlign: textAlign,

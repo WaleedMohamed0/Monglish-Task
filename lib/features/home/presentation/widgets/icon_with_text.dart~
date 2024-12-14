@@ -18,9 +18,9 @@ class IconWithText extends StatelessWidget {
     return Row(
       children: [
         Container(
-            color: Colors.white,
+          color: Colors.white,
             padding: EdgeInsets.all(4),
-            child: Image.asset(iconPath!)),
+            child: Image.asset(iconPath!,width: 15.w,)),
         5.pw,
         DefaultText(
           text: text,

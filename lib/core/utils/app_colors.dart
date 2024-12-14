@@ -16,4 +16,12 @@ class AppColors {
       const Color.fromRGBO(201, 168, 226, 0.4);
   static Color packageClubsContainerColor =
       const Color.fromRGBO(255, 206, 163, 0.7);
+  static Color juniorsContainerColor = const Color.fromRGBO(193, 255, 193, 0.5);
+  static Color headerTextContainerColor =
+      const Color.fromRGBO(102, 102, 102, 1);
+  static Color rewardsContainerColor = const Color.fromRGBO(255, 215, 0, 0.25);
+  static Color progressIndicatorColor = const Color.fromRGBO(0, 123, 255, 1);
+  static Color progressIndicatorBackgroundColor =
+      const Color.fromRGBO(153, 153, 153, 0.25);
+  static Color feedbackContainerColor = const Color.fromRGBO(227, 242, 253, 1);
 }

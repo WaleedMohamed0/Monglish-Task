@@ -39,7 +39,7 @@ abstract class AppConstants {
     "Schools",
     "Classes",
     "Clubs",
-    "Payments",
+    "Payment",
     "Discussion",
     "Settings"
   ];

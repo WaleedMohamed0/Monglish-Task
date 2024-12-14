@@ -3,9 +3,10 @@ import 'package:monglish/core/extensions/empty_padding_extension.dart';
 import 'package:monglish/core/utils/app_assets.dart';
 import 'package:monglish/core/utils/app_colors.dart';
 import 'package:monglish/core/widgets.dart';
-import 'package:monglish/features/home/presentation/widgets/HomeContainer.dart';
+import 'package:monglish/features/home/presentation/widgets/home_container.dart';
 import 'package:monglish/features/home/presentation/widgets/header_widgets.dart';
 import 'package:monglish/features/home/presentation/widgets/icon_with_text.dart';
+import 'package:monglish/features/home/presentation/widgets/user_image.dart';
 import 'package:monglish/features/login/presentation/cubits/login_cubit/login_cubit.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -48,10 +49,7 @@ class UserInfoWidget extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            CircleAvatar(
-                                backgroundColor: AppColors.primaryColor,
-                                radius: 22.sp,
-                                child: Image.asset(AppAssets.userImage)),
+                            UserImage(),
                             10.pw,
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,3 +107,4 @@ class UserInfoWidget extends StatelessWidget {
     );
   }
 }
+
