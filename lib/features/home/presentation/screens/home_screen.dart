@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:monglish/core/extensions/empty_padding_extension.dart';
 import 'package:monglish/features/home/presentation/widgets/current_level_container.dart';
 import 'package:monglish/features/home/presentation/widgets/custom_table_calendar.dart';
-import 'package:monglish/features/home/presentation/widgets/user_info_container.dart';
+import 'package:monglish/features/home/presentation/widgets/user_info/user_info_container.dart';
 import 'package:monglish/features/home/presentation/widgets/feedback/feedback_list_widget.dart';
 import 'package:monglish/features/home/presentation/widgets/juniors_widget.dart';
 import 'package:monglish/features/home/presentation/widgets/package_club/package_clubs_widget.dart';
@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          UserInfoWidget(loginCubit: loginCubit),
+          UserInfoContainer(loginCubit: loginCubit),
           10.ph,
           CurrentLevelWidget(),
           30.ph,

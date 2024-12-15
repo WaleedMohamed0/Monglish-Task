@@ -3,7 +3,7 @@ import 'package:monglish/core/extensions/empty_padding_extension.dart';
 import 'package:monglish/core/utils/app_assets.dart';
 import 'package:monglish/core/utils/app_colors.dart';
 import 'package:monglish/core/widgets.dart';
-import 'package:monglish/features/home/presentation/widgets/HomeContainer.dart';
+import 'package:monglish/features/home/presentation/widgets/home_container.dart';
 import 'package:monglish/features/home/presentation/widgets/header_widgets.dart';
 import 'package:monglish/features/home/presentation/widgets/icon_with_text.dart';
 import 'package:monglish/features/home/presentation/widgets/user_image.dart';

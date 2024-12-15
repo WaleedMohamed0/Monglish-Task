@@ -1,8 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:dio/io.dart';
-
-import 'dart:io';
-
 import 'package:monglish/core/utils/app_constants.dart';
 
 class DioHelper {

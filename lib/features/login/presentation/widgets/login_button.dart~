@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+import 'package:monglish/core/utils/app_colors.dart';
+import 'package:monglish/core/widgets.dart';
+import 'package:monglish/features/login/presentation/cubits/login_cubit/login_cubit.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
+
+class LoginButton extends StatelessWidget {
+  const LoginButton({
+    super.key,
+    required this.state,
+    required this.loginCubit,
+    required this.emailOrUserNameController,
+    required this.passwordController,
+    required this.formKey,
+  });
+
+  final LoginStates state;
+  final LoginCubit loginCubit;
+  final TextEditingController emailOrUserNameController;
+  final TextEditingController passwordController;
+  final GlobalKey<FormState> formKey;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: state is LoginLoadingState
+          ? CircularProgressIndicator(color: AppColors.primaryColor)
+          : TextButton(
+              onPressed: () {
+                if(!formKey.currentState!.validate()) return;
+                loginCubit.userLogin(
+                    email: emailOrUserNameController.text,
+                    password: passwordController.text);
+              },
+              style: ButtonStyle(
+                  backgroundColor:
+                      WidgetStatePropertyAll(AppColors.primaryColor),
+                  foregroundColor: WidgetStatePropertyAll(Colors.white),
+                  minimumSize: WidgetStatePropertyAll(Size(100.w, 7.h)),
+                  shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)))),
+              child: DefaultText(
+                text: "Login",
+                fontSize: 17.sp,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+    );
+  }
+}

@@ -4,6 +4,7 @@ import 'package:monglish/config/app_routes.dart';
 import 'package:monglish/core/extensions/empty_padding_extension.dart';
 import 'package:monglish/core/utils/app_assets.dart';
 import 'package:monglish/core/utils/app_colors.dart';
+import 'package:monglish/core/widgets.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      if(mounted) {
+      if (mounted) {
         context.pushReplacementNamed(Routes.loginRoute);
       }
     });
@@ -55,12 +56,11 @@ class _SplashScreenState extends State<SplashScreen> {
                 height: 6.h,
                 color: AppColors.splashTextBackgroundColor,
                 alignment: Alignment.center,
-                child: const Text(
-                  'YOUR PATH TO FLUENCY',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
+                child: DefaultText(
+                  text: 'YOUR PATH TO FLUENCY',
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],

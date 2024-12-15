@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:monglish/core/extensions/empty_padding_extension.dart';
 import 'package:monglish/core/utils/app_assets.dart';
 import 'package:monglish/core/utils/app_colors.dart';
-import 'package:monglish/core/utils/app_constants.dart';
 import 'package:monglish/features/home/presentation/screens/home_screen.dart';
+import 'package:monglish/features/home/presentation/widgets/custom_bottom_nav_bar.dart';
 import 'package:monglish/features/home/presentation/widgets/menu/menu_header.dart';
 import 'package:monglish/features/home/presentation/widgets/menu/menu_list_widget.dart';
 import 'package:monglish/features/home/presentation/widgets/menu/menu_right_bar.dart';
@@ -52,18 +52,7 @@ class HomeLayout extends StatelessWidget {
       ),
       resizeToAvoidBottomInset: false,
       body: HomeScreen(),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          boxShadow: [BoxShadow(color: Colors.black, blurRadius: 1)],
-        ),
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: AppConstants.bottomNavItems,
-          backgroundColor: Colors.white,
-          currentIndex: 2,
-          selectedItemColor: AppColors.primaryColor,
-        ),
-      ),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }
