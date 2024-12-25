@@ -3,16 +3,13 @@ import 'package:monglish/core/extensions/empty_padding_extension.dart';
 import 'package:monglish/core/utils/app_colors.dart';
 import 'package:monglish/features/home/presentation/widgets/header_widgets.dart';
 import 'package:monglish/features/home/presentation/widgets/user_info/user_info_widgets.dart';
-import 'package:monglish/features/login/presentation/cubits/login_cubit/login_cubit.dart';
+import 'package:monglish/features/login/data/models/login_response.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class UserInfoContainer extends StatelessWidget {
-  const UserInfoContainer({
-    super.key,
-    required this.loginCubit,
-  });
+  final LoginResponse loginResponse;
 
-  final LoginCubit loginCubit;
+  const UserInfoContainer({super.key, required this.loginResponse});
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +26,9 @@ class UserInfoContainer extends StatelessWidget {
         children: [
           HeaderWidgets(),
           10.ph,
-          UserInfoWidgets(loginCubit: loginCubit),
+          UserInfoWidgets(loginResponse: loginResponse),
         ],
       ),
     );
   }
 }
-
-

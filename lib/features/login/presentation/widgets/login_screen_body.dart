@@ -10,17 +10,10 @@ import 'package:monglish/features/login/presentation/widgets/login_fields_contai
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class LoginScreenBody extends StatelessWidget {
-  const LoginScreenBody({
-    super.key,
-  });
+  const LoginScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailOrUserNameController =
-        TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-    final LoginCubit loginCubit = LoginCubit.get(context);
-
     return BlocConsumer<LoginCubit, LoginStates>(listener: (context, state) {
       if (state is LoginSuccessState) {
         Fluttertoast.showToast(
@@ -29,7 +22,7 @@ class LoginScreenBody extends StatelessWidget {
       }
       if (state is LoginErrorState) {
         Fluttertoast.showToast(
-            msg: "Email Or Password Is Invaild", backgroundColor: Colors.red);
+            msg: state.errorMessage, backgroundColor: Colors.red);
       }
     }, builder: (context, state) {
       return SingleChildScrollView(
@@ -50,12 +43,7 @@ class LoginScreenBody extends StatelessWidget {
                     AppAssets.logo,
                     height: 15.h,
                   ),
-                  LoginFieldsContainer(
-                    emailOrUserNameController: emailOrUserNameController,
-                    passwordController: passwordController,
-                    loginCubit: loginCubit,
-                    state: state,
-                  ),
+                  const LoginFieldsContainer(),
                 ],
               ),
             ),

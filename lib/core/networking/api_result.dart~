@@ -1,4 +1,5 @@
-import 'package:movies_app/core/api/error_handler.dart';
+import 'package:monglish/core/networking/error_handler.dart';
+
 /// A sealed class representing the result of an API call.
 ///
 /// It can be either a [ApiSuccess], containing the result data,

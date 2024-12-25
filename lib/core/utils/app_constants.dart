@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:monglish/core/utils/app_assets.dart';
 
 abstract class AppConstants {
-  static const String baseURL = "https://monglishtest.fekracomputers.net/api/";
   static List<BottomNavigationBarItem> bottomNavItems = [
     BottomNavigationBarItem(
       icon: Image.asset(AppAssets.moreIcon),
@@ -43,4 +42,6 @@ abstract class AppConstants {
     "Discussion",
     "Settings"
   ];
+  static dynamic loggedUserToken = "";
+  static dynamic loggedUserId = "";
 }

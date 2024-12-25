@@ -14,13 +14,6 @@ class CustomBottomNavBar extends StatelessWidget {
         boxShadow: [BoxShadow(color: Colors.black, blurRadius: 1)],
       ),
       child: BottomNavigationBar(
-        onTap: (index)
-        {
-          if (index == 4)
-            {
-              Scaffold.of(context).openEndDrawer();
-            }
-        },
         type: BottomNavigationBarType.fixed,
         items: AppConstants.bottomNavItems,
         backgroundColor: Colors.white,

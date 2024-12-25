@@ -29,16 +29,18 @@ class MenuHeader extends StatelessWidget {
           )),
       child: Row(
         children: [
-          CircleAvatar(
-              backgroundColor: AppColors.primaryColor,
-              radius: 30,
-              backgroundImage: AssetImage(AppAssets.userImage)),
+          Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: AppColors.primaryColor, width: 2),
+              ),
+              child: Image.asset(AppAssets.userImage)),
           8.pw,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               DefaultText(
-                text: 'Welcome Ahmed Mohamed',
+                text: 'Welcome Mohamed Ahmed',
                 color: Colors.white,
                 fontSize: 14.sp,
               ),

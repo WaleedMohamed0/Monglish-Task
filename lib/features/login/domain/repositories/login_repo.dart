@@ -1,6 +1,7 @@
-import 'package:monglish/features/login/data/models/user_model.dart';
+import 'package:monglish/core/networking/api_result.dart';
+import 'package:monglish/features/login/data/models/login_request_body.dart';
+import 'package:monglish/features/login/data/models/login_response.dart';
 
-abstract class LoginRepo
-{
-  Future<UserModel?> userLogin({required String email, required String password});
+abstract class LoginRepo {
+  Future<ApiResult<LoginResponse>> userLogin(LoginRequestBody loginRequestBody);
 }

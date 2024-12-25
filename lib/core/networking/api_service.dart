@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:monglish/core/networking/api_constants.dart';
+import 'package:monglish/features/home/data/models/user_data_model.dart';
 import 'package:monglish/features/login/data/models/login_request_body.dart';
 import 'package:monglish/features/login/data/models/login_response.dart';
 import 'package:retrofit/retrofit.dart';
@@ -12,4 +13,8 @@ abstract class ApiService {
 
   @POST(ApiConstants.loginEndPoint)
   Future<LoginResponse> login(@Body() LoginRequestBody loginRequestBody);
+
+  @GET("students/{id}")
+  Future<UserDataModel> getStudentByID(
+      @Path("id") int id, @Header("Authorization") String token);
 }

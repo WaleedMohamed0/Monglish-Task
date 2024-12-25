@@ -29,14 +29,9 @@ class ErrorHandler {
       case DioExceptionType.badResponse:
         {
           final int? statusCode = error.response?.statusCode;
-          if (statusCode == 422) {
-            return MessageModel.fromJson(error.response?.data);
-            // // Handle 422 specifically
-            // final dynamic errorData =
-            //     error.response?.data; // Parse error details if available
-            // final dynamic errorMessage = errorData?['message'] ??
-            //     "The request contains invalid data and cannot be processed.";
-            // return MessageModel(errorMessage);
+          // Handle 422 error
+          if (statusCode == 422 || statusCode == 500) {
+            return MessageModel.fromJson(error.response?.data["code"]);
           } else {
             return MessageModel(ErrorMessages.badResponse);
           }

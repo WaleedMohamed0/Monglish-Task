@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:monglish/core/extensions/empty_padding_extension.dart';
 import 'package:monglish/core/utils/app_colors.dart';
 import 'package:monglish/core/widgets.dart';
@@ -7,22 +8,10 @@ import 'package:monglish/features/login/presentation/widgets/login_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class LoginFieldsContainer extends StatelessWidget {
-  const LoginFieldsContainer({
-    super.key,
-    required this.emailOrUserNameController,
-    required this.passwordController,
-    required this.loginCubit,
-    required this.state,
-  });
-
-  final TextEditingController emailOrUserNameController;
-  final TextEditingController passwordController;
-  final LoginCubit loginCubit;
-  final LoginStates state;
+  const LoginFieldsContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var formKey = GlobalKey<FormState>();
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
       width: double.infinity,
@@ -46,7 +35,7 @@ class LoginFieldsContainer extends StatelessWidget {
               text: "Email or Username", color: AppColors.labelTextColor),
           9.ph,
           Form(
-            key: formKey,
+            key: context.read<LoginCubit>().formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -54,7 +43,8 @@ class LoginFieldsContainer extends StatelessWidget {
                     validationString: "Email or Username",
                     hintText: "Email or Username",
                     borderColor: AppColors.borderColor,
-                    controller: emailOrUserNameController,
+                    controller:
+                        context.read<LoginCubit>().emailOrUserNameController,
                     keyboardType: TextInputType.emailAddress),
                 30.ph,
                 DefaultText(text: "Password", color: AppColors.labelTextColor),
@@ -62,7 +52,7 @@ class LoginFieldsContainer extends StatelessWidget {
                 DefaultTextFormField(
                     validationString: "Password",
                     hintText: "Enter Password",
-                    controller: passwordController,
+                    controller: context.read<LoginCubit>().passwordController,
                     borderColor: AppColors.borderColor,
                     isPassword: true,
                     keyboardType: TextInputType.visiblePassword),
@@ -72,12 +62,7 @@ class LoginFieldsContainer extends StatelessWidget {
                   color: AppColors.primaryColor,
                 ),
                 35.ph,
-                LoginButton(
-                    state: state,
-                    loginCubit: loginCubit,
-                    emailOrUserNameController: emailOrUserNameController,
-                    passwordController: passwordController,
-                    formKey: formKey),
+                const LoginButton(),
               ],
             ),
           ),

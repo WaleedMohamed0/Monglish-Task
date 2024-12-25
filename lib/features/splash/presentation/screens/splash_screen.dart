@@ -4,6 +4,8 @@ import 'package:monglish/config/app_routes.dart';
 import 'package:monglish/core/extensions/empty_padding_extension.dart';
 import 'package:monglish/core/utils/app_assets.dart';
 import 'package:monglish/core/utils/app_colors.dart';
+import 'package:monglish/core/utils/app_constants.dart';
+import 'package:monglish/core/utils/cache_helper.dart';
 import 'package:monglish/core/widgets.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -18,9 +20,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
+
+    Future.delayed(const Duration(seconds: 2), () async {
+      AppConstants.loggedUserToken = await CacheHelper.getData(key: "token");
+      AppConstants.loggedUserId = await CacheHelper.getData(key: "id");
       if (mounted) {
-        context.pushReplacementNamed(Routes.loginRoute);
+        AppConstants.loggedUserToken != null
+            ? context.pushReplacementNamed(Routes.homeRoute)
+            : context.pushReplacementNamed(Routes.loginRoute);
       }
     });
   }
