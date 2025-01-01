@@ -13,9 +13,9 @@ class LoginScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => LoginCubit(di<LoginRepo>()),
       child: Scaffold(
-          backgroundColor: Colors.white,
-          resizeToAvoidBottomInset: false,
-          body: LoginScreenBody()),
+        body: LoginScreenBody(),
+      ),
     );
   }
 }
+

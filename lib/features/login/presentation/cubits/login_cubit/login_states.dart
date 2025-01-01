@@ -20,3 +20,5 @@ class GetUserDataLoadingState extends LoginStates {}
 class GetUserDataSuccessState extends LoginStates {}
 
 class GetUserDataErrorState extends LoginStates {}
+class ChangePasswordVisibilityState extends LoginStates {}
+class ChangeCheckBoxState extends LoginStates {}

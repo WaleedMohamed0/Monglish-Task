@@ -2,15 +2,21 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static const Color primaryColor = Color(0xffFE7700);
-  static const List<Color> backgroundColors = [
-    Color(0xFF001741),
-    Color(0xFF2B4BAB),
-    Color(0xFF001741)
+  static const Color backgroundColor = Color(0xFF165F85);
+  static const loginBackgroundColors = [
+    Color.fromRGBO(255, 255, 255, 1),
+    Color.fromRGBO(224, 224, 224, 0),
+    Color.fromRGBO(153, 153, 153, 0.4),
   ];
-  static const Color splashTextBackgroundColor = Color(0xffFE7700);
+  static const loginBtnColors = [
+    Color.fromRGBO(244, 125, 33, 1),
+    Color.fromRGBO(255, 157, 82, 1),
+    Color.fromRGBO(255, 157, 82, 1)
+  ];
+  static const Color textFormFieldHintColor = Color.fromRGBO(34, 35, 38, 1);
   static const Color labelTextColor = Color(0xff434050);
 
-  static const Color borderColor = Color.fromRGBO(67, 64, 80, 0.5);
+  static const Color borderColor = Colors.black;
   static Color userInfoContainerColor =
       const Color.fromRGBO(163, 208, 255, 0.5);
   static Color currentLevelContainerColor =

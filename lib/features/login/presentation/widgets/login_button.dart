@@ -13,23 +13,31 @@ class LoginButton extends StatelessWidget {
     return BlocBuilder<LoginCubit, LoginStates>(builder: (context, state) {
       if (state is! LoginLoadingState) {
         return Center(
-          child: TextButton(
-            onPressed: () {
-              if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(14),
+              gradient: LinearGradient(colors: AppColors.loginBtnColors),
+            ),
+            child: TextButton(
+              onPressed: () {
                 context.read<LoginCubit>().userLogin();
-              }
-            },
-            style: ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(AppColors.primaryColor),
-                foregroundColor: WidgetStatePropertyAll(Colors.white),
-                minimumSize: WidgetStatePropertyAll(Size(100.w, 7.h)),
-                shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8)))),
-            child: DefaultText(
-              text: "Login",
-              fontSize: 17.sp,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+
+                // if (context
+                //     .read<LoginCubit>()
+                //     .formKey
+                //     .currentState!
+                //     .validate()) {
+                //   context.read<LoginCubit>().userLogin();
+                // }
+              },
+              style: ButtonStyle(
+                  minimumSize: WidgetStatePropertyAll(Size(100.w, 6.h)),
+               ),
+              child: DefaultText(
+                text: "Login",
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         );

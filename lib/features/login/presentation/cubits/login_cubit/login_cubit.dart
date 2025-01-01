@@ -20,6 +20,23 @@ class LoginCubit extends Cubit<LoginStates> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   ApiResult<LoginResponse>? userModel;
 
+  bool isPass = true;
+
+  IconData suffixIcon = Icons.visibility_outlined;
+  bool isChecked = false;
+
+  void changeCheckBox() {
+    isChecked = !isChecked;
+    emit(ChangeCheckBoxState());
+  }
+
+  void changePasswordVisibility() {
+    isPass = !isPass;
+    suffixIcon =
+        isPass ? Icons.visibility_outlined : Icons.visibility_off_outlined;
+    emit(ChangePasswordVisibilityState());
+  }
+
   Future<void> userLogin() async {
     emit(LoginLoadingState());
 
@@ -29,10 +46,13 @@ class LoginCubit extends Cubit<LoginStates> {
     userModel = await loginRepo.userLogin(loginRequestBody);
     userModel!.when(
         success: (data) {
-          CacheHelper.saveData(key: "id", value: data.id);
-          CacheHelper.saveData(key: "token", value: "Bearer ${data.token}");
-          AppConstants.loggedUserToken = "Bearer ${data.token}";
-          AppConstants.loggedUserId = data.id;
+          if(isChecked)
+            {
+              CacheHelper.saveData(key: "id", value: data.id);
+              CacheHelper.saveData(key: "token", value: "Bearer ${data.token}");
+              AppConstants.loggedUserToken = "Bearer ${data.token}";
+              AppConstants.loggedUserId = data.id;
+            }
           emit(LoginSuccessState());
         },
         failure: (handler) =>

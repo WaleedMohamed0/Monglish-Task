@@ -10,20 +10,21 @@ class MenuListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-        shrinkWrap: true,
-        separatorBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.only(left: 15,bottom: 5,right: 15),
-          child: DottedLine(
-            direction: Axis.horizontal,
-            dashColor: Colors.white70,
-            dashGapLength: 2,
-          ),
-        ),
-        itemCount: AppConstants.menuIcons.length,
-        itemBuilder: (context, index) => MenuItem(
-          text: AppConstants.menuTexts[index],
-          iconPath: AppConstants.menuIcons[index],
-        ));
+    return Container();
+      // ListView.separated(
+      //   shrinkWrap: true,
+      //   separatorBuilder: (context, index) => Padding(
+      //     padding: const EdgeInsets.only(left: 15,bottom: 5,right: 15),
+      //     child: DottedLine(
+      //       direction: Axis.horizontal,
+      //       dashColor: Colors.white70,
+      //       dashGapLength: 2,
+      //     ),
+      //   ),
+      //   itemCount: AppConstants.menuIcons.length,
+      //   itemBuilder: (context, index) => MenuItem(
+      //     text: AppConstants.menuTexts[index],
+      //     iconPath: AppConstants.menuIcons[index],
+      //   ));
   }
 }

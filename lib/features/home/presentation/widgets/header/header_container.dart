@@ -10,23 +10,12 @@ class HeaderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 0,
-      left: 0,
-      right: 0,
-      child: PreferredSize(
-        preferredSize: Size.fromHeight(16.h),
-        child: Container(
-          padding: EdgeInsets.only(top: 2.5.h),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: AppColors.backgroundColors,
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter),
-          ),
-          child: HeaderWidgets(),
-        ),
+    return Container(
+      // padding: EdgeInsets.only(top: 2.5.h),
+      decoration: BoxDecoration(
+       color: AppColors.backgroundColor
       ),
+      child: HeaderWidgets(),
     );
   }
 }

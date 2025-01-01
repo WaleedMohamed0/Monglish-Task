@@ -4,44 +4,35 @@ import 'package:monglish/core/utils/app_assets.dart';
 abstract class AppConstants {
   static List<BottomNavigationBarItem> bottomNavItems = [
     BottomNavigationBarItem(
-      icon: Image.asset(AppAssets.moreIcon),
-      label: 'More',
-    ),
+        icon: ImageIcon(AssetImage(AppAssets.menuIcon)), label: ''),
     BottomNavigationBarItem(
-      icon: Image.asset(AppAssets.classesIcon),
-      label: 'Classes',
-    ),
+        icon: ImageIcon(AssetImage(AppAssets.uptrendIcon)), label: ''),
+    BottomNavigationBarItem(icon: Image.asset(AppAssets.homeIcon), label: ''),
     BottomNavigationBarItem(
-      icon: Image.asset(AppAssets.dashboardIcon),
-      label: 'Dashboard',
-    ),
+        icon: ImageIcon(AssetImage(AppAssets.videoCameraIcon)), label: ''),
     BottomNavigationBarItem(
-      icon: Image.asset(AppAssets.clubsIcon),
-      label: 'Clubs',
-    ),
-    BottomNavigationBarItem(
-      icon: Image.asset(AppAssets.discussionIcon),
-      label: 'Discussion',
-    ),
+        icon: ImageIcon(AssetImage(AppAssets.messengerIcon)), label: ''),
   ];
-  static List<String> menuIcons = [
-    AppAssets.menuDashboardIcon,
-    AppAssets.schoolIcon,
-    AppAssets.classesIcon,
-    AppAssets.clubsIcon,
-    AppAssets.paymentIcon,
-    AppAssets.discussionIcon,
-    AppAssets.settingsIcon
-  ];
-  static List<String> menuTexts = [
-    "Dashboard",
-    "Schools",
-    "Classes",
-    "Clubs",
-    "Payments",
-    "Discussion",
-    "Settings"
-  ];
+
+  // static List<String> menuIcons = [
+  //   AppAssets.menuDashboardIcon,
+  //   AppAssets.schoolIcon,
+  //   AppAssets.clubsIcon,
+  //   AppAssets.paymentIcon,
+  //   AppAssets.discussionIcon,
+  //   AppAssets.settingsIcon
+  // ];
+  // static List<String> menuTexts = [
+  //   "Dashboard",
+  //   "Schools",
+  //   "Classes",
+  //   "Clubs",
+  //   "Payments",
+  //   "Discussion",
+  //   "Settings"
+  // ];
+  static String emailAddressHint = "michael.mitc@example.com";
+  static String passwordHint = "•••••••••••";
   static dynamic loggedUserToken = "";
   static dynamic loggedUserId = "";
 }

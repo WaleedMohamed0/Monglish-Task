@@ -21,15 +21,15 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 2), () async {
-      AppConstants.loggedUserToken = await CacheHelper.getData(key: "token");
-      AppConstants.loggedUserId = await CacheHelper.getData(key: "id");
-      if (mounted) {
-        AppConstants.loggedUserToken != null
-            ? context.pushReplacementNamed(Routes.homeRoute)
-            : context.pushReplacementNamed(Routes.loginRoute);
-      }
-    });
+    // Future.delayed(const Duration(seconds: 2), () async {
+    //   AppConstants.loggedUserToken = await CacheHelper.getData(key: "token");
+    //   AppConstants.loggedUserId = await CacheHelper.getData(key: "id");
+    //   if (mounted) {
+    //     AppConstants.loggedUserToken != null
+    //         ? context.pushReplacementNamed(Routes.homeRoute)
+    //         : context.pushReplacementNamed(Routes.loginRoute);
+    //   }
+    // });
   }
 
   @override
@@ -38,31 +38,25 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         padding: EdgeInsets.only(top: 10.h),
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              colors: AppColors.backgroundColors,
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter),
+          color: AppColors.backgroundColor,
+          image: DecorationImage(
+            image: AssetImage(AppAssets.splashBackgroundImage,),
+
+          ),
         ),
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                AppAssets.logo,
+                AppAssets.appLogo,
                 width: 80.w,
                 height: 20.h,
               ),
-              20.ph,
-              Image.asset(
-                AppAssets.boy,
-                width: 60.w,
-                height: 40.h,
-              ),
-              50.ph,
+              80.ph,
               Container(
-                width: double.infinity,
                 height: 6.h,
-                color: AppColors.splashTextBackgroundColor,
-                alignment: Alignment.center,
+                alignment: Alignment.bottomCenter,
                 child: DefaultText(
                   text: 'YOUR PATH TO FLUENCY',
                   fontSize: 20,

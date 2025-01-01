@@ -28,7 +28,7 @@ class JuniorsWidget extends StatelessWidget {
             CustomGridView(
                 child: IconWithText(
                   text: "4 Students",
-                  iconPath: AppAssets.juniorsIcon,
+                  iconPath: AppAssets.messengerIcon,
                 )),
           ],
         ));

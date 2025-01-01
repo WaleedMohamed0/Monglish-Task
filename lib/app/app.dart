@@ -12,7 +12,9 @@ class Monglish extends StatelessWidget {
           builder: (context, child) => child!,
           routerConfig: AppRoutes.router,
           theme: ThemeData(
-              fontFamily: "QuickSand", scaffoldBackgroundColor: Colors.white),
+            fontFamily: "Poppins",
+            scaffoldBackgroundColor: Colors.white,
+          ),
           debugShowCheckedModeBanner: false),
     );
   }

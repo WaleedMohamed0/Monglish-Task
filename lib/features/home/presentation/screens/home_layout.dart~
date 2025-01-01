@@ -18,7 +18,6 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('HomeLayout');
     return BlocProvider(
       create: (context) => HomeCubit(di<HomeRepo>())..getStudentByID(),
       child: Scaffold(

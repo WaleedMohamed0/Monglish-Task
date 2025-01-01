@@ -27,7 +27,7 @@ class HomeLayout extends StatelessWidget {
             child: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                  colors: AppColors.backgroundColors,
+                  colors: AppColors.loginBackgroundColors,
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),

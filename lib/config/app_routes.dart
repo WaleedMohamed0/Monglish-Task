@@ -4,17 +4,12 @@ import 'package:monglish/features/login/presentation/screens/login_screen.dart';
 import 'package:monglish/features/splash/presentation/screens/splash_screen.dart';
 
 abstract class Routes {
-  static const String splashRoute = "/";
   static const String loginRoute = "/LoginRoute";
   static const String homeRoute = "/HomeRoute";
 }
 
 abstract class AppRoutes {
-  static final router = GoRouter(routes: [
-    GoRoute(
-        path: Routes.splashRoute,
-        name: Routes.splashRoute,
-        builder: (context, state) => const SplashScreen()),
+  static final router = GoRouter(initialLocation: Routes.loginRoute, routes: [
     GoRoute(
         path: Routes.loginRoute,
         name: Routes.loginRoute,
