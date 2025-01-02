@@ -1,15 +1,11 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:monglish/core/extensions/empty_padding_extension.dart';
-import 'package:monglish/core/utils/app_assets.dart';
 import 'package:monglish/core/widgets.dart';
 import 'package:monglish/features/login/presentation/widgets/login_fields_container.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class LoginContainer extends StatelessWidget {
-  const LoginContainer({
-    super.key,
-  });
+  const LoginContainer({super.key});
 
   @override
   Widget build(BuildContext context) {

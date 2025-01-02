@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:monglish/config/app_routes.dart';
+import 'package:monglish/core/utils/app_colors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class Monglish extends StatelessWidget {
@@ -12,8 +13,8 @@ class Monglish extends StatelessWidget {
           builder: (context, child) => child!,
           routerConfig: AppRoutes.router,
           theme: ThemeData(
-            fontFamily: "QuickSand",
-            scaffoldBackgroundColor: Colors.white,
+            fontFamily: "Poppins",
+            scaffoldBackgroundColor: AppColors.backgroundColor,
           ),
           debugShowCheckedModeBanner: false),
     );

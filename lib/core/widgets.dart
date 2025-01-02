@@ -45,7 +45,7 @@ class RPSCustomPainter extends CustomPainter {
         size.height * 0.02808431,
         size.width * 0.002564103,
         size.height * 0.06333368);
-    path_1.lineTo(size.width * 0.002564103, size.height * 0.4);
+    path_1.lineTo(size.width * 0.002564103, size.height * 1);
 
     Paint paint_1_stroke = Paint()
       ..style = PaintingStyle.stroke
@@ -54,8 +54,8 @@ class RPSCustomPainter extends CustomPainter {
       Offset(size.width * 0.002564103, size.height * 0.4),
       Offset(size.width * 0.9974359, size.height * 0.4),
       [
-        Colors.white.withOpacity(0.7),
-        Colors.white,
+        Colors.white.withOpacity(0.8),
+        Colors.white.withOpacity(0.1),
       ],
       [
         0,
@@ -132,6 +132,72 @@ class DefaultText extends StatelessWidget {
     );
   }
 }
+
+class DefaultTextButton extends StatelessWidget {
+  final String text;
+  final Color? color;
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final double? width;
+  final double? height;
+  final VoidCallback? onPressed;
+  final double? borderRadius;
+
+  const DefaultTextButton({
+    super.key,
+    required this.text,
+    this.color = Colors.white,
+    this.fontSize = 14,
+    this.fontWeight = FontWeight.w300,
+    this.onPressed,
+    required this.width,
+    required this.height,
+    this.borderRadius = 14,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(borderRadius!),
+        gradient: LinearGradient(colors: AppColors.loginBtnColors),
+      ),
+      child: TextButton(
+        onPressed: onPressed,
+        style: ButtonStyle(
+          minimumSize: WidgetStatePropertyAll(Size(width!, height!)),
+        ),
+        child: DefaultText(
+          text: text,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+        ),
+      ),
+    );
+  }
+}
+
+//TextButton(
+//               onPressed: () {
+//                 context.read<LoginCubit>().userLogin();
+//
+//                 // if (context
+//                 //     .read<LoginCubit>()
+//                 //     .formKey
+//                 //     .currentState!
+//                 //     .validate()) {
+//                 //   context.read<LoginCubit>().userLogin();
+//                 // }
+//               },
+//               style: ButtonStyle(
+//                   minimumSize: WidgetStatePropertyAll(Size(100.w, 6.h)),
+//                ),
+//               child: DefaultText(
+//                 text: "Login",
+//                 fontSize: 18.sp,
+//                 fontWeight: FontWeight.w600,
+//               ),
+//             ),
 
 class DefaultTextFormField extends StatelessWidget {
   final TextEditingController? controller;

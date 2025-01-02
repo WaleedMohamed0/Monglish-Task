@@ -21,42 +21,42 @@ class HomeLayout extends StatelessWidget {
     return BlocProvider(
       create: (context) => HomeCubit(di<HomeRepo>())..getStudentByID(),
       child: Scaffold(
-          endDrawer: Drawer(
-            width: double.infinity,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-            child: Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: AppColors.loginBackgroundColors,
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 10.h, left: 2.w),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          MenuHeader(),
-                          MenuListWidget(),
-                          7.ph,
-                          Padding(
-                            padding: EdgeInsets.only(right: 5.w),
-                            child:
-                                Image.asset(AppAssets.frameImage, height: 22.h),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  MenuRightBar(),
-                ],
-              ),
-            ),
-          ),
+          // endDrawer: Drawer(
+          //   width: double.infinity,
+          //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+          //   child: Container(
+          //     decoration: const BoxDecoration(
+          //       gradient: LinearGradient(
+          //         colors: AppColors.loginBackgroundColors,
+          //         begin: Alignment.topLeft,
+          //         end: Alignment.bottomRight,
+          //       ),
+          //     ),
+          //     child: Row(
+          //       children: [
+          //         Expanded(
+          //           child: Padding(
+          //             padding: EdgeInsets.only(top: 10.h, left: 2.w),
+          //             child: Column(
+          //               crossAxisAlignment: CrossAxisAlignment.end,
+          //               children: [
+          //                 MenuHeader(),
+          //                 MenuListWidget(),
+          //                 7.ph,
+          //                 Padding(
+          //                   padding: EdgeInsets.only(right: 5.w),
+          //                   child:
+          //                       Image.asset(AppAssets.frameImage, height: 22.h),
+          //                 ),
+          //               ],
+          //             ),
+          //           ),
+          //         ),
+          //         MenuRightBar(),
+          //       ],
+          //     ),
+          //   ),
+          // ),
           body: HomeScreen(),
           bottomNavigationBar: const CustomBottomNavBar()),
     );

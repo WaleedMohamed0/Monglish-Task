@@ -13,7 +13,7 @@ abstract class AppConstants {
     BottomNavigationBarItem(
         icon: ImageIcon(AssetImage(AppAssets.messengerIcon)), label: ''),
   ];
-
+  static bool isUserLoggedIn = false;
   // static List<String> menuIcons = [
   //   AppAssets.menuDashboardIcon,
   //   AppAssets.schoolIcon,
